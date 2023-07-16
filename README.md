@@ -15,11 +15,11 @@ The Real Estate App is a Flutter-based mobile application that allows users to s
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.png)
-*Caption for Screenshot 1*
+| Screenshot 1                  | Screenshot 2                  |
+| ----------------------------- | ----------------------------- |
+| ![Screenshot 1](screenshots/screenshot1.png) | ![Screenshot 2](screenshots/screenshot2.png) |
+| *Login Screen*    | *Home Screen*    |
 
-![Screenshot 2](screenshots/screenshot2.png)
-*Caption for Screenshot 2*
 
 ## Getting Started
 
