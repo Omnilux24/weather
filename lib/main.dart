@@ -1,18 +1,21 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:weather/register.dart';
-import 'package:weather/register_agency.dart';
-import 'home_screen.dart';
-import 'splash.dart';
-import 'constants.dart';
-import 'login.dart';
-import 'menu.dart';
+import 'package:weather/auth/register.dart';
+import 'package:weather/auth/register_agency.dart';
+import 'properties/add_properties.dart';
+import 'homescreen/home_screen.dart';
+import 'error/notfoundpage.dart';
+import 'splash/splash.dart';
+import 'themedata/constants.dart';
+import 'auth/login.dart';
+import 'menu/menu.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
-
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,11 +24,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: Colors.white,
-        
       ),
-      home: HomeAgency(),
+      home: AddPropertyPage(),
       routes: {
-        '/home': (context) => HomeScreen(),
+        '/add_properties': (context) => const AddPropertyPage(),
+        '/home': (context) => const HomeScreen(),
+      },
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(
+          builder: (context) => const NotFoundPage(),
+        );
       },
     );
   }
@@ -202,7 +210,7 @@ class HomeScreen extends StatelessWidget {
                   title: 'Property Title 1',
                   description: 'Short Description 1',
                   rating: '4.5',
-                  price: '\$500,000',
+                  price: '\R500,000',
                   location: 'Location 1',
                   bedrooms: 3,
                   bathrooms: 2,
@@ -213,7 +221,7 @@ class HomeScreen extends StatelessWidget {
                   title: 'Property Title 2',
                   description: 'Short Description 2',
                   rating: '4.2',
-                  price: '\$400,000',
+                  price: '\R400,000',
                   location: 'Location 2',
                   bedrooms: 4,
                   bathrooms: 3,
@@ -224,7 +232,7 @@ class HomeScreen extends StatelessWidget {
                   title: 'Property Title 3',
                   description: 'Short Description 3',
                   rating: '4.8',
-                  price: '\$600,000',
+                  price: '\R600,000',
                   location: 'Location 3',
                   bedrooms: 2,
                   bathrooms: 1,
@@ -256,7 +264,6 @@ class CategoryWidget extends StatelessWidget {
         CircleAvatar(
           radius: 30.0,
           child: Icon(icon),
-          
         ),
         const SizedBox(height: 8.0),
         Text(label),
@@ -294,7 +301,7 @@ class FeaturedPropertyCard extends StatelessWidget {
                       Icon(Icons.star, size: 16.0, color: Colors.amber),
                       Text('4.5'),
                       SizedBox(width: 8.0),
-                      Text('\$500,000'),
+                      Text('\R500,000'),
                     ],
                   ),
                 ],

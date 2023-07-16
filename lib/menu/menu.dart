@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'main.dart';
+import '../properties/add_properties.dart';
+
+import '../main.dart';
 
 class AppWrapper extends StatefulWidget {
-  const AppWrapper({Key? key}) : super(key: key);
+  const AppWrapper({Key? key, required}) : super(key: key);
 
   @override
   _AppWrapperState createState() => _AppWrapperState();
@@ -25,7 +27,7 @@ class _AppWrapperState extends State<AppWrapper> {
         children: const [
           // Replace these Placeholder widgets with your actual screens
           HomeScreen(),
-          Placeholder(),
+          AddPropertyPage(),
           Placeholder(),
           Placeholder(),
         ],
@@ -63,7 +65,9 @@ class _AppWrapperState extends State<AppWrapper> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/add_properties');
+        },
         child: const Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

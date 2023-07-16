@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'agency_dashboard.dart';
 
 class HomeAgency extends StatelessWidget {
   const HomeAgency({Key? key}) : super(key: key);
@@ -9,12 +10,9 @@ class HomeAgency extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Agency Home'),
       ),
-      body: const Center(
-        child: Text(
-          'Welcome, Agency!',
-          style: TextStyle(fontSize: 24.0),
-        ),
-      ),
+      body: const DashboardWidget(totalViews:200, totalProperties: 200, totalCalls: 500, totalMessages: 900, houses: [],),
+      
+      
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -79,8 +77,36 @@ class HomeAgency extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.logout),
-              title: const Text('Logout'),
+              leading: const Icon(Icons.info),
+              title: const Text('About'),
+              onTap: () {
+                // TODO: Handle drawer item tap
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.privacy_tip),
+              title: const Text('Privacy Policy'),
+              onTap: () {
+                // TODO: Handle drawer item tap
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.description),
+              title: const Text('Terms and Conditions'),
+              onTap: () {
+                // TODO: Handle drawer item tap
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.contact_mail),
+              title: const Text('Contact'),
+              onTap: () {
+                // TODO: Handle drawer item tap
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.help),
+              title: const Text('Help & Support'),
               onTap: () {
                 // TODO: Handle drawer item tap
               },
